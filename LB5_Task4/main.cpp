@@ -34,7 +34,7 @@ int main()
             K = readIntegerInLine();
         }
 
-        int** arr = initMatrix(N, K);
+        long double** arr = initMatrix(N, K);
         int size = findZeroesAmount(N, K, arr);
         int** index = findZeroesLocation(N, K, arr);
 
@@ -57,8 +57,8 @@ int main()
             cout << '\n';
         }
 
-        free2DMatrix(arr, N);
-        free2DMatrix(index, size);
+        free2DMatrixInteger(index, size);
+        free2DMatrixDouble(arr, N);
     }
 
     return 0;

@@ -52,9 +52,9 @@ TEST(ReadDoubleTest, DOUBLE_InvalidInput3) {
 //findZeroesAmount()
 TEST(findZeroesAmount, findZeroesAmountTest1) {
     int N = 2, K = 2;
-    int** arr = new int* [N];
+    long double** arr = new long double* [N];
     for (int i = 0; i < N; ++i)
-        arr[i] = new int[K];
+        arr[i] = new long double[K];
 
     for (int i = 0; i < N; ++i) {
         for (int j = 0; j < K; ++j) {
@@ -73,9 +73,9 @@ TEST(findZeroesAmount, findZeroesAmountTest1) {
 
 TEST(findZeroesAmount, findZeroesAmountTest2) {
     int N = 1, K = 1;
-    int** arr = new int* [N];
+    long double** arr = new long double* [N];
     for (int i = 0; i < N; ++i)
-        arr[i] = new int[K];
+        arr[i] = new long double[K];
 
     for (int i = 0; i < N; ++i) {
         for (int j = 0; j < K; ++j) {
@@ -93,14 +93,14 @@ TEST(findZeroesAmount, findZeroesAmountTest2) {
 }
 
 TEST(findZeroesAmount, findZeroesAmountTest3) {
-    int N = 1, K = 1;
-    int** arr = new int* [N];
+    int N = 10, K = 10;
+    long double** arr = new long double* [N];
     for (int i = 0; i < N; ++i)
-        arr[i] = new int[K];
+        arr[i] = new long double[K];
 
     for (int i = 0; i < N; ++i) {
         for (int j = 0; j < K; ++j) {
-            arr[i][j] = 2147483600;
+            arr[i][j] = 1.79769e308;
         }
     }
     EXPECT_EQ(findZeroesAmount(N, K, arr), 0);
@@ -115,9 +115,9 @@ TEST(findZeroesAmount, findZeroesAmountTest3) {
 
 TEST(findZeroesAmount, findZeroesAmountTest4) {
     int N = 10000, K = 10000;
-    int** arr = new int* [N];
+    long double** arr = new long double* [N];
     for (int i = 0; i < N; ++i)
-        arr[i] = new int[K];
+        arr[i] = new long double[K];
 
     for (int i = 0; i < N; ++i) {
         for (int j = 0; j < K; ++j) {

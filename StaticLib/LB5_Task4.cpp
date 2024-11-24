@@ -27,10 +27,10 @@ long double readDoubleInLine() {
     return number;
 }
 
-int** initMatrix(int N, int K) {
-    int** arr = new int* [N];
+long double** initMatrix(int N, int K) {
+    long double** arr = new long double* [N];
     for (int i = 0; i < N; ++i) {
-        arr[i] = new int[K];
+        arr[i] = new long double[K];
     }
 
     cout << "¬ведите элементы матрицы\n";
@@ -49,7 +49,7 @@ int** initMatrix(int N, int K) {
     return arr;
 }
 
-void free2DMatrix(int** arr, int N) {
+void free2DMatrixInteger(int** arr, int N) {
     for (int i = 0; i < N; ++i) {
         delete[] arr[i];
     }
@@ -57,7 +57,15 @@ void free2DMatrix(int** arr, int N) {
     arr = NULL;
 }
 
-int findZeroesAmount(int N, int K, int** arr) {
+void free2DMatrixDouble(long double** arr, int N) {
+    for (int i = 0; i < N; ++i) {
+        delete[] arr[i];
+    }
+    delete[] arr;
+    arr = NULL;
+}
+
+int findZeroesAmount(int N, int K, long double** arr) {
     int res = 0;
     for (int i = 0;i < N; ++i) {
         for (int j = 0; j < K; ++j) {
@@ -67,7 +75,7 @@ int findZeroesAmount(int N, int K, int** arr) {
     return res;
 }
 
-int** findZeroesLocation(int N, int K, int** arr) {
+int** findZeroesLocation(int N, int K, long double** arr) {
 
     int size = findZeroesAmount(N, K, arr);
 
