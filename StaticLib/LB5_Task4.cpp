@@ -71,6 +71,9 @@ int** findZeroesLocation(int N, int K, int** arr) {
 
     int size = findZeroesAmount(N, K, arr);
 
+    if (size == 0)
+        return 0;
+
     int** index = new int* [size];
     for (int i = 0; i < size; ++i) {
         index[i] = new int[2];

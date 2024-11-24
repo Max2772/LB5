@@ -40,10 +40,21 @@ int main()
 
         cout << "Общее количесвто нулевых элементов: " << size << '\n';
         cout << "Местоположения нулевых элементов в матрице:\n";
-        int cnt = 1;
-        for (int i = 0;i < size; ++i) {
+        if (size == 0)
+            cout << "Нулевых элементов не существует!\n";
+        else {
+            int cnt = 1;
+            for (int i = 0;i < size; ++i) {
                 cout << cnt << " нулевой элемент: i = " << index[i][0] << ", j = " << index[i][1] << '\n';
                 ++cnt;
+            }
+        }
+        cout << "\nОбратная матрица:\n";
+        for (int i = N - 1;i >= 0; --i) {
+            for (int j = K - 1; j >= 0; --j) {
+                cout << arr[i][j] << ' ';
+            }
+            cout << '\n';
         }
 
         free2DMatrix(arr, N);
