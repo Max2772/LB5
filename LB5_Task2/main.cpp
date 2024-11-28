@@ -8,20 +8,20 @@ int main() {
     setlocale(LC_ALL, "RU");
     cout << "Программа, для подсчета произвдения массива, где каждый элемент равен B^2 + cos(B)\n";
     cout << "Выполнил Бибиков Максим, группа 453502\n";
-    HINSTANCE load;
-    load = LoadLibrary(L"DynamicLib.dll");
+   // HINSTANCE LoadLibrary(L"DynamicLib.dll");
+    //LoadLibrary(L"DynamicLib.dll") = LoadLibrary(L"DynamicLib.dll")Library(LoadLibrary(L"DynamicLib.dll"));
     typedef int (*readInteger)();
     readInteger read1;
-    read1 = (readInteger)GetProcAddress(load, "readIntegerInLine");
+    read1 = (readInteger)GetProcAddress(LoadLibrary(L"DynamicLib.dll"), "readIntegerInLine");
     typedef int (*readDouble)();
     readDouble read2;
-    read2 = (readDouble)GetProcAddress(load, "readDoubleInLine");
+    read2 = (readDouble)GetProcAddress(LoadLibrary(L"DynamicLib.dll"), "readDoubleInLine");
     typedef long double (*COS)(long double x);
     COS read3;
-    read3 = (COS)GetProcAddress(load, "COS");
+    read3 = (COS)GetProcAddress(LoadLibrary(L"DynamicLib.dll"), "COS");
     typedef int (*solve)(long double* arr, int start, int end);
     solve read4;
-    read4 = (solve)GetProcAddress(load, "solveProblem");
+    read4 = (solve)GetProcAddress(LoadLibrary(L"DynamicLib.dll"), "solveProblem");
 
     while (true) {
         cout << "Введите 1, если хотите выполнить программу, или 2, если хотите завершить работу программы: ";
@@ -59,6 +59,6 @@ int main() {
         delete[] arr;
         arr = NULL;
     }
-    FreeLibrary(load);
+    //FreeLibrary(LoadLibrary(L"DynamicLib.dll"));
 	return 0;
 }

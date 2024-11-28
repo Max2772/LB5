@@ -1,4 +1,4 @@
-#pragma once
+//#pragma once
 
 extern "C" {
     __declspec(dllexport) const int INF = 666666666;
