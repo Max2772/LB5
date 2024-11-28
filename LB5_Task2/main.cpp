@@ -6,7 +6,7 @@ using namespace std;
 
 int main() {
     setlocale(LC_ALL, "RU");
-    cout << "Программа, для смещения максимального элемента к левому углу, используя перестановки строк и столбцов\n";
+    cout << "Программа, для подсчета произвдения массива, где каждый элемент равен B^2 + cos(B)\n";
     cout << "Выполнил Бибиков Максим, группа 453502\n";
     HINSTANCE load;
     load = LoadLibrary(L"DynamicLib.dll");
@@ -16,10 +16,10 @@ int main() {
     typedef int (*readDouble)();
     readDouble read2;
     read2 = (readDouble)GetProcAddress(load, "readDoubleInLine");
-    typedef long double (*COS)();
+    typedef long double (*COS)(long double x);
     COS read3;
     read3 = (COS)GetProcAddress(load, "COS");
-    typedef int (*solve)();
+    typedef int (*solve)(long double* arr, int start, int end);
     solve read4;
     read4 = (solve)GetProcAddress(load, "solveProblem");
 
